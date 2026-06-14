@@ -26,7 +26,7 @@ export const RESUME_DATA: ResumeData = {
       },
       {
         name: "X",
-        url: "https://x.com/amolj",
+        url: "https://x.com/amolj_",
         icon: "x",
       },
     ],
