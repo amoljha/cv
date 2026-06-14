@@ -8,6 +8,7 @@ import "./globals.css";
 import type React from "react";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { RESUME_DATA } from "@/data/resume-data";
+import { THEME_STORAGE_KEY } from "@/lib/theme";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cv.jarocki.me"),
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#030712" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#030712" },
   ],
   width: "device-width",
@@ -81,7 +82,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning={true}>
+      <head>
+        <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Applies the saved or system theme before first paint
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const storedTheme = localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});
+                const savedTheme = storedTheme === "light" || storedTheme === "dark"
+                  ? storedTheme
+                  : null;
+                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                const theme = savedTheme ?? (prefersDark ? "dark" : "light");
+                document.documentElement.classList.toggle("dark", theme === "dark");
+                document.documentElement.style.colorScheme = theme;
+              } catch {}
+            `,
+          }}
+        />
+      </head>
       <body>
         <ErrorBoundary>{children}</ErrorBoundary>
         <Analytics />

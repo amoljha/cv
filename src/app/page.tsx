@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CommandMenu } from "@/components/command-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { RESUME_DATA } from "@/data/resume-data";
 import { generateResumeStructuredData } from "@/lib/structured-data";
 import { Education } from "./components/education";
@@ -76,9 +77,11 @@ export default function ResumePage() {
         }}
       />
       <main
-        className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-11 md:p-16"
+        className="container relative mx-auto scroll-my-12 overflow-auto px-4 pb-4 pt-16 print:p-11 md:p-16"
         id="main-content"
       >
+        <ThemeToggle />
+
         <div className="sr-only">
           <h1>{RESUME_DATA.name}</h1>
         </div>
