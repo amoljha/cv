@@ -1,6 +1,6 @@
 export const BlueskyIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="-1 0 27 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>Bluesky</title>
       <path
         fill="currentColor"
