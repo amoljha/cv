@@ -1,4 +1,10 @@
-import { GlobeIcon, MailIcon, NewspaperIcon, PhoneIcon } from "lucide-react";
+import {
+  GlobeIcon,
+  MailIcon,
+  MapPinnedIcon,
+  NewspaperIcon,
+  PhoneIcon,
+} from "lucide-react";
 import type React from "react";
 import { Avatar } from "@/components/avatar";
 import { BlueskyIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
@@ -36,7 +42,7 @@ function LocationLink({ location, locationLink }: LocationLinkProps) {
         rel="noopener noreferrer"
         aria-label={`Location: ${location}`}
       >
-        <GlobeIcon className="size-3" aria-hidden="true" />
+        <MapPinnedIcon className="size-3.5" aria-hidden="true" />
         {location}
       </a>
     </p>

@@ -4,7 +4,7 @@ export const RESUME_DATA: ResumeData = {
   name: "Amol Jha",
   initials: "AJ",
   location: "San Francisco Bay Area, CA",
-  locationLink: "https://www.google.com/maps/place/SanFrancisco",
+  locationLink: "https://www.google.com/maps/place/San%20Francisco",
   about: "Software Engineer building distributed systems and infrastructure.",
   summary:
     "Hi, I'm Amol. I'm a software engineer with 5+ years of experience designing and building high-performance, large-scale distributed systems and backend services. I'm interested in systems engineering, open-source software and startups.",
