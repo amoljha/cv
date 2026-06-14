@@ -10,6 +10,7 @@ export const RESUME_DATA: ResumeData = {
     "Hi, I'm Amol. I'm a software engineer with 5+ years of experience designing and building high-performance, large-scale distributed systems and backend services. I'm interested in systems engineering, open-source software and startups.",
   avatarUrl: "https://avatars.githubusercontent.com/u/18339093?v=4",
   personalWebsiteUrl: "https://amoljha.com",
+  blogUrl: "https://blog.amoljha.com",
   contact: {
     email: "mail@amoljha.com",
     tel: "+1-(765)-772-6884",

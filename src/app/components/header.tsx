@@ -1,4 +1,4 @@
-import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
+import { GlobeIcon, MailIcon, NewspaperIcon, PhoneIcon } from "lucide-react";
 import type React from "react";
 import { Avatar } from "@/components/avatar";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
@@ -68,9 +68,14 @@ function SocialButton({ href, iconType, label }: SocialButtonProps) {
 interface ContactButtonsProps {
   contact: typeof RESUME_DATA.contact;
   personalWebsiteUrl?: string;
+  blogUrl?: string;
 }
 
-function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
+function ContactButtons({
+  contact,
+  personalWebsiteUrl,
+  blogUrl,
+}: ContactButtonsProps) {
   return (
     <ul
       className="flex list-none gap-x-1 pt-1 font-mono text-sm text-foreground/80 print:hidden"
@@ -83,6 +88,25 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
             iconType="globe"
             label="Personal website"
           />
+        </li>
+      )}
+      {blogUrl && (
+        <li>
+          <Button
+            className="size-8"
+            variant="outline"
+            size="icon"
+            asChild={true}
+          >
+            <a
+              href={blogUrl}
+              aria-label="Blog"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <NewspaperIcon className="size-4" aria-hidden="true" />
+            </a>
+          </Button>
         </li>
       )}
       {contact.email && (
@@ -180,6 +204,7 @@ export function Header() {
         <ContactButtons
           contact={RESUME_DATA.contact}
           personalWebsiteUrl={RESUME_DATA.personalWebsiteUrl}
+          blogUrl={RESUME_DATA.blogUrl}
         />
 
         <PrintContact

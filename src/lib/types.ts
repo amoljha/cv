@@ -15,6 +15,7 @@ export interface ResumeData {
   summary: string;
   avatarUrl: string;
   personalWebsiteUrl: string;
+  blogUrl?: string;
   contact: {
     email: string;
     tel: string;

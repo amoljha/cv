@@ -10,10 +10,10 @@ import { Summary } from "./components/summary";
 import { WorkExperience } from "./components/work-experience";
 
 export const metadata: Metadata = {
-  title: `${RESUME_DATA.name} - Resume`,
+  title: RESUME_DATA.name,
   description: RESUME_DATA.about,
   openGraph: {
-    title: `${RESUME_DATA.name} - Resume`,
+    title: RESUME_DATA.name,
     description: RESUME_DATA.about,
     type: "profile",
     locale: "en_US",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${RESUME_DATA.name} - Resume`,
+    title: RESUME_DATA.name,
     description: RESUME_DATA.about,
     images: ["https://cv.jarocki.me/opengraph-image"],
   },
@@ -44,6 +44,13 @@ function getCommandMenuLinks() {
     links.push({
       url: RESUME_DATA.personalWebsiteUrl,
       title: "Personal Website",
+    });
+  }
+
+  if (RESUME_DATA.blogUrl) {
+    links.push({
+      url: RESUME_DATA.blogUrl,
+      title: "Blog",
     });
   }
 
@@ -73,7 +80,7 @@ export default function ResumePage() {
         id="main-content"
       >
         <div className="sr-only">
-          <h1>{RESUME_DATA.name}&apos;s Resume</h1>
+          <h1>{RESUME_DATA.name}</h1>
         </div>
 
         <section
