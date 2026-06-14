@@ -30,6 +30,11 @@ export const RESUME_DATA: ResumeData = {
         url: "https://x.com/amolj_",
         icon: "x",
       },
+      {
+        name: "Bluesky",
+        url: "https://bsky.app/profile/amoljha.com",
+        icon: "bluesky",
+      },
     ],
   },
   education: [

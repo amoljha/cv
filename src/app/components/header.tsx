@@ -1,7 +1,7 @@
 import { GlobeIcon, MailIcon, NewspaperIcon, PhoneIcon } from "lucide-react";
 import type React from "react";
 import { Avatar } from "@/components/avatar";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { BlueskyIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { XIcon } from "@/components/icons/x-icon";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
@@ -12,6 +12,7 @@ const ICON_MAP: Record<
   IconType,
   React.ComponentType<React.SVGProps<SVGSVGElement>>
 > = {
+  bluesky: BlueskyIcon,
   github: GitHubIcon,
   linkedin: LinkedInIcon,
   x: XIcon,

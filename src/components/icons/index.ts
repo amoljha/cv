@@ -1,4 +1,5 @@
+import { BlueskyIcon } from "./bluesky-icon";
 import { GitHubIcon } from "./github-icon";
 import { LinkedInIcon } from "./linkedin-icon";
 
-export { GitHubIcon, LinkedInIcon };
+export { BlueskyIcon, GitHubIcon, LinkedInIcon };
