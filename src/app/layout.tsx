@@ -1,8 +1,9 @@
 import { Analytics } from "@vercel/analytics/react";
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
 
+import "@fontsource/iosevka/400.css";
+import "@fontsource/iosevka/600.css";
+import "@fontsource/iosevka/700.css";
 import "./globals.css";
 import type React from "react";
 import { ErrorBoundary } from "@/components/error-boundary";
@@ -80,10 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`dark ${GeistSans.variable} ${GeistMono.variable}`}
-    >
+    <html lang="en" className="dark">
       <body>
         <ErrorBoundary>{children}</ErrorBoundary>
         <Analytics />
